@@ -1,0 +1,195 @@
+.footer {
+    &-top {
+        padding: 7.5rem 7rem;
+        @include flexBox(strecth, space-between)
+    }
+
+    &-column{
+        width: calc(25% - 25px);
+        &:first-child{
+            width: calc(40% - 25px);
+        }
+
+        &:nth-child(2){
+            width: calc(35% - 25px);
+        }
+    }
+    &-heading {
+        text-transform: uppercase;
+        font-weight: 700;
+        height: 4rem;
+        margin-bottom: 2rem;
+        &--logo {
+            text-transform: none;
+            font-size: 4.6rem;
+            font-weight: bold;
+            color: $gray-dark-color;
+            display: inline-block;
+        }
+    }
+    &-desc {
+        font-family: $secondary-font;
+        font-size: 1.5rem;
+        line-height: 1.5;
+        color: $text-color;
+        margin-top: 2rem;
+        padding-bottom: 3rem;
+    }
+    &-follower {
+        strong {
+            font-weight: bold;
+            font-size: 1.8rem;
+        }
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid $gray-dark-color;
+    }
+    &-social {
+        @include flexBox(center,flex-start);
+        margin-bottom: 3.5rem;
+    }
+
+    &-social-list{
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    &-text {
+        color: $text-color;
+        font-size: 1.4rem;
+        font-style: italic;
+        flex-shrink: 0;
+    }
+
+    &-social-icon {
+        color: $third-color;
+        margin-left: 1.5rem;
+        font-size: 2rem;
+    }
+
+    &-form {
+        width: 100%;
+        max-width: 38rem;
+        @include flexBox();
+    }
+
+    &-form-input {
+        padding: 1.5rem;
+        background-color: #fff;
+        border: 1px solid $gray-dark-color;
+        border-right: 0;
+        outline: none;
+        font-family: $secondary-font;
+        font-size: 1.5rem;
+        font-style: italic;
+        width: 100%;
+        line-height: normal;
+    }
+
+    &-form-button {
+        color: #fff;
+        text-transform: uppercase;
+        padding: 1.5rem 3.5rem;
+        border: 0;
+        background-color: $third-color;
+        flex-shrink: 0;
+        font-size: 1.4rem;
+        border-radius: 0
+    }
+
+    &-blog {
+        @include flexBox(center);
+        margin-bottom: 3rem;
+    }
+
+    &-blog-image {
+        width: 32rem;
+        height: 6rem;
+        object-fit: cover;
+    }
+
+    &-blog-info {
+        padding-left: 2rem;
+    }
+
+    &-blog-title {
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+        line-height: 1.4;
+        font-weight: 700;
+        @include textClamp(2);
+        color: $title-color;
+    }
+
+    &-blog-date {
+        font-style: italic;
+        font-size: 1.4rem;
+        color: $text-color;
+
+    }
+
+    &-images {
+        @include flexBox(stretch,flex-start, row, wrap);
+        margin-left: -2px;
+        margin-bottom: 2rem;
+    }
+
+    &-image {
+        margin-left: 2px;
+        width: calc(33.33% - 2px);
+        margin-bottom: 2px;
+        padding-bottom: 33.33%;
+        height: 0;
+        position: relative;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    &-view {
+        font-style: italic;
+        color: $text-color;
+        cursor: pointer;
+        span{
+            margin-top: 2rem;
+        }
+    }
+
+    &-bottom {
+        padding: 2.5rem 0;
+        text-align: center;
+        border-top: 1px solid $gray-dark-color;
+        span {
+            color: $primary-color;
+        }
+
+    }
+
+    @include maxWidth(1023px) {
+        &-top {
+            display: block;
+            padding: 5rem 1rem;
+        }
+
+        &-column {
+            width: 100% !important;
+            margin-bottom: 3rem;
+        }
+
+        &-column:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    @include maxWidth(479px) {
+        &-form-button {
+            padding: 1.5rem;
+        }
+    }
+}

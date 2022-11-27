@@ -1,0 +1,18 @@
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+.text{
+    font-family: $secondary-font;
+    font-size: 1.5rem;
+    font-style: italic;
+    @include textClamp();
+}
+
+.text-light{
+    font-weight: 300;
+}
+.text-italic{
+    font-style: italic;
+}

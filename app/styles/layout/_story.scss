@@ -1,0 +1,140 @@
+.story {
+    padding: 10rem 0;
+    background-color: #fff;
+
+    &-list {
+        @include flexBox(stretch, space-between);
+    }
+
+    &-item {
+        width: calc(33.33% - 2rem);
+    }
+
+    &-media {
+        position: relative;
+    }
+
+    &-image {
+        width: 100%;
+        height: 24rem;
+        object-fit: cover;
+    }
+
+    &-date {
+        padding: 1.5rem 2rem;
+        background-color: $third-color;
+        @include flexBox(center, center, column);
+        color: #fff;
+        position: absolute;
+        bottom: 1rem;
+        left: -1rem;
+        z-index: 2;
+
+    }
+
+    &-date-number {
+        font-size: 3rem;
+        font-weight: 700;
+    }
+
+    &-date-text {
+        font-style: italic;
+        font-family: $secondary-font;
+    }
+
+    &-title {
+        margin: 2rem 0;
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    &-desc {
+        font-family: $secondary-font;
+        line-height: 1.5;
+        color: $text-color;
+        margin-bottom: 2.5rem;
+        padding-bottom: 2.5rem;
+        border-bottom: 1px solid $gray-dark-color;
+    }
+    &-meta { 
+        @include flexBox(center);
+        color: $third-color;
+        &-item {
+            margin-right: 2rem;
+            @include flexBox(center,space-between)
+        }
+        &-icon{
+            margin-right: 0.8rem;
+        }
+        &-number{
+            font-style: italic;
+            font-weight: 300;
+            font-family: $secondary-font;
+            font-size: 1.5rem;
+            color: $text-color;
+        }
+    }
+    @include maxWidth(1023px){
+        padding: 5rem 0;
+        &-image{
+            height: 14rem;
+        }
+        &-date{
+            padding: 1rem 1.5rem;
+        }
+        &-title{
+            font-size: 1.5rem;
+        }
+        &-desc{
+            font-size: 1.3rem;
+            @include textClamp(4)
+        }
+    }
+    @include maxWidth(767px){
+        padding-bottom: 0;
+        &-list{
+            display: block;
+        }
+        &-item{
+            width: 100%;
+            margin-bottom: 5rem;
+        }
+        &-date{
+            bottom: 5px;
+            left: -5px;
+        }
+        &-image{
+            height: auto;
+        }
+    }
+}
+
+.map {
+    padding: 6rem 0;
+    background: linear-gradient(to bottom, rgba(#fff,0.7),rgba(#fff,0.6)),url("../images/img-map.png") no-repeat center/ cover;
+    &-content{
+        @include flexBox(center, center, column);
+
+    }
+    &-heading{
+        position: relative;
+        font-size: 2.4rem;
+        font-weight: bold;
+        color: $primary-color;
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+        text-transform: uppercase;
+        margin-top: 1.5rem;
+        &::after{
+            content: "";
+            background-color: $primary-color;
+            width: 6.5rem;
+            height: 0.4rem;
+            bottom:0;
+            left: 50%;
+            transform: translateX(-50%);
+            position: absolute;
+        }
+    }
+}

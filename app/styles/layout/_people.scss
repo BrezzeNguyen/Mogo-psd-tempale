@@ -1,0 +1,64 @@
+.people{
+    padding:10rem 0 3rem;
+    background:linear-gradient(to bottom, rgba($gray-light-color,0.75), rgba($gray-light-color,0.85)), url("../images/img-people-bg.png") no-repeat center/cover;
+    &-list{
+        @include flexBox(stretch, space-between, row, wrap);
+        margin-top: 9rem;
+        padding: 0 4rem;
+    }
+    &-item{
+        width: calc(50% - 4rem);
+        margin-bottom: 7rem;
+        @include flexBox(flex-start);
+
+    }
+    &-info{
+        margin-left: 3rem;
+        font-size: 1.5rem;
+        font-family: $secondary-font;
+    }
+    &-name{
+        text-transform: uppercase;
+        font-weight: 700;
+        padding: 1.5rem 0;
+    }
+    &-position{
+        font-weight: 300;
+        font-style: italic;
+        position: relative;
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+        &::after{
+            content: "";
+            width: 6rem;
+            height: 0.3rem;
+            background-color: $primary-color;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    }
+    &-desc{
+        color: $text-color;
+        line-height: 1.5;
+        @include textClamp(3);
+    }
+    @include maxWidth(1023px){
+        padding: 5rem 0 1rem ;
+        &-item{
+            width: 100%;
+            margin-bottom: 4rem;
+        }
+    }
+    @include maxWidth(767px){
+        &-list{
+            padding: 1rem;
+            margin-bottom: 6rem;
+            margin-top: 0;
+        }
+        &-avatar{
+            width: 6rem;
+            height: 6rem;
+        }
+    }
+}

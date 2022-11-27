@@ -1,0 +1,116 @@
+mixin menuLink(title, href="#")
+    li.header-menu-item
+        a.header-menu-link(href= href)= title 
+
+mixin headerBottomItem(number, title)
+ .header-bottom-items
+        span.header-bottom-number= number
+        span.header-bottom-text= title
+
+mixin blockBox(caption, title, desc)
+    .block-box
+        h3.block-box-caption= caption
+        h3.block-box-heading= title
+        if desc 
+            p.block-box-desc=desc 
+//- data = {src: "", title :"", iconClass: "", alt: ""} 
+mixin blockAbout(data)
+    .about-item 
+        img.about-image(src=data.src, alt=data.alt)
+        .about-content
+            i.about-icon(class= data.iconClass)
+            span.about-title= data.title
+
+mixin blockNumber(count, text)
+    .number-item    
+        h4.number-item-count=count
+        span.number-item-text= text 
+
+mixin blockService(src, title, des)
+    .service-item 
+        img.service-item-icon(src= src)
+        .service-item-info 
+            h3.service-item-title= title 
+            p.service-item-des= des
+
+mixin blockAccordion(src,title,iconClass,content, isactive = "")
+    .wedo-item(class= isactive )
+        .wedo-item-header 
+            img(src=src).wedo-item-img
+            h3.wedo-item-title= title 
+            i.wedo-item-icon(class= iconClass)
+        .wedo-item-content
+            .wedo-item-text=content
+
+mixin TeamSocial(facebook= "#", twitter= "#", pinterest= "#", instagram= "#")
+    ul.team-social 
+        li.team-social-item 
+            a.team-social-link(href=facebook)
+                i.fab.fa-facebook-f
+        li.team-social-item 
+            a.team-social-link(href=twitter)
+                i.fab.fa-twitter
+        li.team-social-item 
+            a.team-social-link(href=pinterest)
+                i.fab.fa-pinterest
+        li.team-social-item 
+            a.team-social-link(href=instagram)
+                i.fab.fa-instagram
+
+
+mixin blockTeam(src,teamname,teamposition)
+    .team-item 
+        .team-main
+            img(src=src).team-image
+            .team-content 
+                if block 
+                    block
+                        
+        .team-info 
+            h3.team-name=teamname 
+            span.team-position=teamposition  
+
+mixin blockworkItem(src, icon, title, desc,itemfull = "", )
+    .work-item(class=itemfull)
+        img.work-image(src=src ) 
+        .work-content 
+            img(src=icon).work-icon
+            h3.work-title= title
+            span.work-desc.text.text-light.text-italican.work-desc=desc
+
+mixin peopleItem(src,name,position, desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe provident dolorem vel, obcaecati unde magnam id delectus natus inventore possimus quibusdam ratione rerum reiciendis. Asperiores hic earum placeat repudiandae libero!")
+    li.people-item 
+        img(src=src).people-avatar
+        .people-info 
+            h3.people-name=name 
+            h3.people-position=position
+            p.people-desc=desc
+
+mixin storyItem(src = "../images/img-blog1.png", number=15, text="Jan",title="Lorem ipsum dolor sit.", desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet possimus iusto exercitationem.", view= 1000, comment= 100) 
+    li.story-item 
+        .story-media 
+            img.story-image(src=src)
+            .story-date
+                span.story-date-number=number
+                span.story-date-text=text
+        h3.story-title=title 
+        .story-desc= desc
+        .story-meta
+            .story-meta-item 
+                i.fa.fa-eye.story-meta-icon 
+                span.story-meta-number= view
+            .story-meta-item 
+                i.fa.fa-comment.story-meta-icon 
+                span.story-meta-number=comment  
+
+mixin  quoteItem (src="../images/img-quote.png",type= false, desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo laboriosam aperiam vero sit amet eaque deserunt nesciunt. Ab eaque laboriosam eligendi, inventore maxime beatae consectetur quasi nesciunt. Tempore, cupiditate laudantium.", author="John Doe ")
+    .quote-item 
+        if type === false
+            .quote-icon
+                img(src=src)
+        else 
+            .quote-image 
+                img(src= src)
+        .quote-info 
+            p.quote-desc=desc 
+            span.quote-author=author 
